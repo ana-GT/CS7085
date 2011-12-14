@@ -1,0 +1,72 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[latin1]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\author{Ana Huaman}
+\title{Learning Statement \\ Intro to Robotics - CS 7085}
+
+\begin{document}
+\maketitle
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Mechanics
+\section{Mechanics}
+This section exposed us to the basics of Mechanics, starting with the analysys of planar robots and later on extending this to the general spatial case. Initially we learned fundamental concepts such as \textit{Degrees of Freedom, Mobility, Types of manipulators, etc}. Later, we learned how to do \textit{modelling}: to describe a robotic system as a set of free rigid bodies connected by joints and with certain constraints which limit its movement. Based on this, the course went on explaining the \textit{kinematics}, or the study of the movement of the robots (for both planar and parallel topologies)
+\medskip
+
+About \textit{kinematics}, first we learned how to relate the joint positions with the workspace positions, by using \textit{Forward Kinematics} and then the inverse case: How to obtain the required joint positions given a desired workspace configuration (\textit{Inverse Kinematics}). Then, analogously, we explored the relationship between velocities, in particular the use of the Jacobian to convert the velocities from configuration space to workspace. This was a particularly important topic, since we learned about \textit{singular configurations} and how they should be considered in our system design (either to avoid them or to plan ahead how the system should respond).
+\medskip
+
+Finally, we surveyed some common robotic platforms and the advantages and disadvantages of each of them, depending of our applications. I found this section very useful since the design of a robotic system can be done in a more intelligent way if we know the basics of how these systems work (probably I should take a course to learn more about Dynamics, tough)
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Controls
+\section{Controls}
+Here more cool stuff! (probably I say that because this is one of my core areas). We had lectures for \textit{Linear} and \textit{Non-Linear Control} so I will explain briefly what I learned from each of them:
+
+\begin{itemize}
+\item{\textbf{Linear Systems and Control:} We started by learning how to represent a dynamic system with a \textit{state-based representation}} (Modern Control) and some basics of modeling mechanical systems based on their differential equations. Then, we learned the concepts of \textit{Stability} and how we must make our system to reach a stable state by the use of \textit{controllers}.
+\medskip
+
+Naturally, the next step was to learn how to design controllers. We learned how to design \textit{state feedback controllers} for such purpose. However, since our system only give us \textit{output} information, we also learned that we need to \textit{estimate} the state from the output, which means that \textit{Observer Design} must be taken into account. Some more concepts about \textit{Controllability} and \textit{Observability} were introduced to further analyze the properties of the system (and the feasibility of applying the mentioned controls).
+\medskip
+
+Conclusion: Control rocks.
+
+\item{\textbf{Non-Linear Control:} }
+The first thing we learned is that Linear Controls is an abstraction that only exists in the theoretical space of control guys. Meaning: The whole world is non-linear! Hence, it makes sense to analyze how the real systems (with no linearizations around equilibrim points) work.
+\medskip
+
+We revisited the stability concepts for non-linear systems. Since our main goal as control designers is to make our controlled system stable, we learned about \textit{Lyapunov functions} and how to use them to derive a stability form for a dynamic system. Concerning specifically control design, we learned the basics of \textit{feedback linearization}, which can virtually \textit{dissappear} the non-linearities of our system, although to apply it we need to have a system with an accurate model, otherwise this may not work.
+\medskip
+
+Non-Linear control is a pretty big area, so I think I should take the class to learn more about it!
+
+\end{itemize}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Perception
+\section{Perception}
+To control a system we need some information about the environment, meaning, we need to \textit{perceive} what happens around us. We started this topic with a short survey of the most common sensors in robotics and how they can be used to infer information from the world. Furthermore, since we are talking about physical devices (such as radars, sonars, cameras, etc), we know that the information we get is subject to noise and is imperfect. Hence, we also discussed the use of Bayesian networks and diverse kind of filters to extract useful information from our input data (being point clouds, imagery, etc).
+\medskip
+
+Depending of the application, we might use perception for different goals. For instance, if our application includes a robot that  knows the map of its location, but does not know exactly where in the map it is, we can make the robot to explore the cited location and use the collected \textit{perception data}(such as sonar info) to infere, through time, what its current position is. The problem becomes more interesting when the robot actually \textit{does not know what its environment is beforehand} (let alone where in the environment the robot is located!).This constitutes the \textit{SLAM problem}, which we analyzed at some extent at class.
+
+Finally, we also explored Perception applied with images, such as \textit{Sterero Vision}, which allow us (given images from two points of view) to infere important information from our environment, such as 3D depth and how far or near is an object, which is important if we plan our system to do something useful (let's say, motion planning). Other applications we discussed were perception applied to robot soccer, in which the perception input is vital to help the agent \textit{decide} what action to do next, based on the current state of the world.
+\medskip
+
+Conclusion: I hope to take a Computer Vision class soon! (I have taken the undergrad class this semester tough)
+
+
+\section{Artificial Intelligence / Autonomy}
+More interesting stuff here. So far, we had learned how to perceive our environment, how to get information out of it and how to control a mechanical system to do what we want. What we need now is how to make our system \textit{autonomous}: A system reliable enough such that it could take the best decisions towards reaching its target state.
+
+We had an interesting overview of how 
+
+\section{Human-Robot Interaction}
+
+\section{Integration and Summary}
+
+\end{document}
